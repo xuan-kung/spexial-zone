@@ -1,0 +1,56 @@
+#spexial-zone
+//T2：单链表的建立与遍历   1901   20191003128 邝晓璇 
+#include<iostream>
+using namespace std;
+
+#define OK 1
+#define ERROR 0
+
+typedef int Status;
+typedef int ElemType;
+
+typedef struct LNode{
+	ElemType data;//数据域 
+	struct LNode*next;//指针域 
+}LNode,*LinkList;
+
+Status InitList(LinkList &L){//构造一个空的单链表L 
+	L=new LNode;//生成新结点作为头结点，用头指针L指向头结点 
+	L->next=NULL;//头结点的指针域置空
+	return OK; 
+}
+
+void CreateList(LinkList &L,int n){//尾插法建立带头结点的有n个元素的链表 
+	LNode *p,*r;//定义p与r指针
+	r=L;//尾指针r指向头结点
+	for(int i=0;i<n;++i)
+	{
+		p=new LNode;//生成新结点*p
+		cin>> p->data;//输入元素值
+		p->next = NULL;
+		r->next = p;//将p插入到表尾
+		r=p;//r指向新的尾结点 
+	} 
+}
+
+void DisplayList(LinkList L){//遍历带头结点的单链表 
+	LNode *p=L->next;
+	while(p)
+	{
+		if(p->next==NULL)
+		   cout<< p->data;
+		else cout<< p->data<<" ";
+		p=p->next;
+	}
+} 
+
+int main()
+{	
+    int n;
+	cin>>n; //输入n值 
+	LinkList L;//值传递
+	InitList(L);//调用函数InitList
+	CreateList(L,n);//调用函数CreateList 
+	DisplayList(L);//调用函数DisplayList 
+	return 0; 
+} 
