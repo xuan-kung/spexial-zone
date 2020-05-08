@@ -8,10 +8,10 @@ stack
 * stack有可能实际上是一个vector，deque或list。
 
 ##  构造方式
-  stack采用模板类实现，stack对象的默认构造形式：stack<T>stkT;//T可以设置为指针类型或自定义类型<br>
-    * `stack <int> stkInt;`  存放int的stack容器
-    * `stack <float> stkFloat;` 存放float的stack容器
-    * `stack <string> stkString;` 存放string的stack容器
+* stack采用模板类实现，stack对象的默认构造形式：stack<T>stkT;//T可以设置为指针类型或自定义类型
+  * `stack <int> stkInt;`  存放int的stack容器
+  * `stack <float> stkFloat;` 存放float的stack容器
+  * `stack <string> stkString;` 存放string的stack容器
     
 ##  成员函数
 * `push()` 在栈顶增加元素
